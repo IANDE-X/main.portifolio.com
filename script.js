@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
     $(window).scroll(function(){
         if(this.scrollY > 30){
@@ -34,4 +36,10 @@ $(document).ready(function(){
             }
         }
     });
+
+    $(window).on('load', function(){
+        $('#splash').delay(500).fadeOut('slow');
+        $('body').delay(1050).css({'overflow':'visible'});
+        
+    })
 });
