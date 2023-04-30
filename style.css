@@ -1,9 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@378;500;600;700&family=Ubuntu:wght@378;500;700&display=swap');
 *{
     margin: 0;
     padding:  0;
     box-sizing: border-box;
     text-decoration: none;
+}
+
+#splash{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 120%;
+    background: #fff;
+    z-index: 99999999;
+}
+
+#status{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(img/loading_animation.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10%;
 }
 html{
     scroll-behavior: smooth;
@@ -72,8 +95,8 @@ header ul li a:hover{
 
 
 .mainMenu{
-    max-width: 75%;
-    margin: auto;
+    max-width: 100%;
+    margin: 0 80px;
     padding: 0, 80px;
 }
 .navBar{
@@ -82,11 +105,11 @@ header ul li a:hover{
     width: 100%;
     margin: auto;
     transition: all 0.3 ease-in-out;
-    z-index: 3;
+    z-index: 998;
 }
 
 .navBar.sticky{
-    background: rgb(26, 55, 151);
+    background: crimson;
     position: fixed;
     margin-top: -45px;
 }
@@ -97,7 +120,9 @@ header ul li a:hover{
     justify-content: space-between;
 }
 .navBar .logo img{
-    height: 80px;
+    height: 50px;
+    object-fit: cover;
+    margin: 15px 0;
 }
 .navBar .menu li{
     list-style: none;
@@ -117,7 +142,7 @@ header ul li a:hover{
 .navBar .menu li a:hover{
     color: crimson;
 }
-/* card button end */
+
 
 .navBar .menu_btn{
     color: #fff;
@@ -132,57 +157,92 @@ header ul li a:hover{
 
 .home{
     width: 100%;
-    height: 100vh;
+    background-color: #000;
     background: url(img/dark_lap.png);
     background-size: cover;
+    object-fit: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0 auto;
 }
-
-.parent{
+.home .container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-flow: wrap;
+}
+.home .home_side{
+    height: 400px;
+    margin: auto 10px;
+}
+/* .home .home_side:nth-child(1){
     display: flex;
     flex-direction: column;
+    align-items: center;
+} */
+.home .home_side:nth-child(2){
+    flex-grow: 1;
+    animation: animate 60s ease-in-out infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
+
+
+
+
+
+/* nav */
+/* s */
+/* e */
+/* c */
+/* t */
+/* i */
+/* o */
+/* n */
+
+
+
+
+
+
+
+
+
+
+/* home */
+
+
 .home_txt{
-    width: 75%;
     margin: auto;
-    left: 0;
-    right: 0;
-    transform: translate(0, 100%);
 }
 .home_txt h1{
     color: #fff;
     font-size: 66px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 4.5px;
 }
 .home_txt .title{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 
-    sans-serif;
-    color: rgb(98, 253, 253);
+    font-family: 'Poppins', sans-serif;
+    color: #00aad0;
     font-size: 86px;
     line-height: 86px;
 }
 .home_txt h4{
     font-family: 'Poppins';
-    color: rgb(98, 253, 253);
+    color: #00aad0;
     font-size: 26px;
     font-weight: normal;
 }
 
 .home_txt h4 .sub_title{
     color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .intro_txt{
-    width: 65%;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    transform: translate(0, 300%);
+    margin: auto;
 }
 .intro_txt p{
     font-family: Courier, monospace;
@@ -191,101 +251,148 @@ header ul li a:hover{
     letter-spacing: 3px;
 }
 
-.cardHolder{
-    width: 75%;
+.skills{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-    transform: translate(0, 20%);
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    right: 0;
-}
-
-.cardHolder .card{
-    width: 180px;
-    margin: 0;
-    border: 1px groove rgb(255, 255, 255);
-    border-radius: 4px;
-    text-align: center;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    transition: .2s;
-}
-.card a{
-    text-decoration: none;
-}
-
-.card h3{
-    color: rgb(255, 0, 0);
-    font-family: 'Poppins';
-    font-size: 22px;
-    font-weight: lighter;
-}
-.card p{
+    align-items: center;
+    justify-content: center;
     color: #fff;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    font-size: 14px;
-    line-height: 19px;
+    margin: 60px 0 0 0;
+    padding: 20px 0;
 }
 
 
-.card:before{
+
+
+/* skills cards */
+.card{
+    position: relative;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(90, 90, 90, 0.726);  
+    margin: 0 10px;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+}
+.card::before{
     content: '';
     position: absolute;
-    bottom: -100px;
-    left: -200px;
+    top: 0;
+    left: -50%;
     width: 100%;
     height: 100%;
-    transition: .2s;
+    pointer-events: none;  
+    background: rgba(235, 233, 233, 0.411);
 }
-
-.card:hover:before{
+.card .text{
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+}
+.card:hover .text{
+    transform: translateY(-5px);
+    /* color: crimson; */
+}
+.percent{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50% #000;
+    background: #222;
+    z-index: 996;
+}
+.percent .number{
+    position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
-.card:hover p, .card:hover h3{
+.percent .number h2{
+    font-size: 36px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.percent .number h2 span{
+    font-size: 20px;
+}
+.card:hover .percent .number h2{
     color: #fff;
-    opacity: 0;
-    transition: .4 ease-in-out;
-
+    font-size: 46px;
+}
+.c_box .text{
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 0;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 100;
 }
 
-.card:nth-child(1):before{
-    background: url(img/who-am-i.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
+svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 997;
 }
-.card:nth-child(2):before{
-    background: url(img/projects.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -2;
+svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #383838;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+
 }
-.card:nth-child(3):before{
-    background: url(img/skill.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -2;
-}
-.card:nth-child(4):before{
-    background: url(img/image.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -2;
+svg circle:nth-child(2){
+    stroke-dasharray: 378;
+    stroke-dashoffset: 378;
 }
 
-/* a */
-/* b */
-/* o */
-/* u */
-/* t */
+.card:nth-child(1) svg circle:nth-child(2){
+    stroke-dashoffset: calc(378 - (378 * 89) / 100);
+    stroke: rgb(255, 6, 234);
+}
+
+.card:nth-child(2) svg circle:nth-child(2){
+    stroke-dashoffset: calc(378 - (378 * 74) / 100);
+    stroke: rgb(6, 255, 234);
+}
+.card:nth-child(3) svg circle:nth-child(2){
+    stroke-dashoffset: calc(378 - (378 * 75) / 100);
+    stroke: rgb(0, 255, 42);
+}
+.card:nth-child(4) svg circle:nth-child(2){
+    stroke-dashoffset: calc(378 - (378 * 60) / 100);
+    stroke: rgb(255, 43, 6);
+}
+
+/* h2 colors */
+.card:nth-child(1) .percent .number h2:nth-child(1){
+    color: rgb(255, 6, 234);
+}
+.card:nth-child(2) .percent .number h2:nth-child(1){
+    color: rgb(6, 255, 234);
+}
+.card:nth-child(3) .percent .number h2:nth-child(1){
+    color: rgb(0, 255, 42);
+}
+.card:nth-child(4) .percent .number h2:nth-child(1){
+    color: rgb(255, 43, 6);
+}
+
+/*  */
+
 
 /* s */
 /* e */
@@ -316,7 +423,7 @@ section .title{
     font-size: 45px;
     font-weight: 500;
     padding-bottom: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     text-align: center;
     color: #fff;
 
@@ -343,9 +450,13 @@ section .title::after{
     transform: translate(-50%);
 }
 .about .title::after{
-    content: "who am i ? ";
+    content: "my skills";
     background: #222222;
-    
+}
+
+.about .title:nth-child(1)::after{
+    content: "whoami";
+    background: #222222;
 }
 .about .title::before{
     width: 140px;
@@ -355,6 +466,7 @@ section .title::after{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
 }
 
 .about .about_content .sideBarRight{
@@ -364,7 +476,7 @@ section .title::after{
 .about .about_content .sideBarRight .text{
     color: #fff;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
+    font-weight: 378;
     font-size: 36px;
     text-align: center;
     padding: 5px;
@@ -402,7 +514,7 @@ section .title::after{
 .about .about_content .sideBarLeft img{
     height: 400px;
     width: 400px;
-    object-fit: cover;
+    object-fit: contain;
 }
 .about .about_content .sideBarLeft{
     width: 44%;
@@ -445,7 +557,7 @@ section .title::after{
     color: #000;
 }
 .services .title::after{
-    content: "My package";
+    content: "my package";
     background: #fff;
     color: #000;
 }
@@ -465,6 +577,9 @@ section .title::after{
     background: #e2e2e2;
     border-radius: 15px;
     transition: 0.4s all ease;
+    -webkit-box-shadow: -4px -4px 8px rgb(73, 73, 73);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    -4px -4px 8px rgb(73, 73, 73);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         -4px -4px 8px rgb(73, 73, 73);
     
 }
 .services .serv_content .card_item:hover{
@@ -496,9 +611,14 @@ section .title::after{
 }
 .services .serv_content .card_item p{
     padding: 0 0 5px 0;
+    color: #000000;
 }
 
 /* services */
+
+
+
+/* Project */
 /* s */
 /* e */
 /* c */
@@ -506,6 +626,94 @@ section .title::after{
 /* i */
 /* o */
 /* n */
+
+.projects{
+    width: 100%;
+    background-color: #4e4e4e;
+    height: max-content;
+    padding: 80px 0;
+}
+.projects .title::before{
+    width: 240px;
+}
+.projects .title{
+    color: #fff;
+}
+.projects .title::after{
+    content: "work done";
+    background-color: #4e4e4e;
+    color: #fff;
+}
+
+.projects .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.projects .container .pjCard{
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(224, 224, 224);
+    border-radius: 15px;
+    -webkit-box-shadow: 8px 8px 15px 6px #000;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    8px 8px 15px 6px #000;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         8px 8px 15px 6px #000;
+}
+
+.pjCard img{
+    height: 500px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.5s;
+}
+.projects .container:nth-child(5) .pjCard:nth-child(1) img{
+    height: 250px;
+}
+.projects .container:nth-child(5) .pjCard:nth-child(2) img{
+    height: 350px;
+}
+
+.container .pjCard:hover img{
+    left: 70%;
+    height: 550px;
+}
+.container .pjCard .pjContent{
+    position: relative;
+    width: 50%;
+    left: 0;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.container .pjCard:hover .pjContent{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.container .pjCard .pjContent h2{
+    font-family: 'Poppins' sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    color: crimson;
+}
+.container .pjCard .pjContent p{
+    font-size: 1.5em;
+    color: #000000;
+}
+/* Projects */
+
+
 
 /* testimonials */
 
@@ -522,7 +730,7 @@ section .title::after{
     color: #fff;
 }
 .testimonials .title::after{
-    content: "what people say ";
+    content: "people say";
     background: #222222;
     color: #fff;
 }
@@ -551,7 +759,7 @@ section .title::after{
 }
 .testimonials .carousel .card_b .text{
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 378;
     color: crimson;
     padding: 15px 0 7px 0;
 }
@@ -566,7 +774,7 @@ section .title::after{
     height: 180px;
     width: 180px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     border: 4px solid rgb(255, 102, 0);
 }
 
@@ -628,11 +836,14 @@ section .title::after{
     justify-content: space-around;
     align-items: flex-start;
 }
-
+.contact .bigBox img{
+    height: 100px;
+    object-fit: cover;
+}
 .contact .bigBox .text{
     color: crimson;
     font-size: 26px;
-    font-weight: 400;
+    font-weight: 378;
     text-decoration: underline;
 }
 .contact .bigBox p{
@@ -686,7 +897,7 @@ section .title::after{
 
 footer{
     text-align: center;
-    background:  rgb(3, 62, 172);
+    background:  #00aad0;
     color: #000;
     letter-spacing: 1.2px;
     
@@ -701,6 +912,34 @@ footer .design{
     font-weight: 600;
 
 }
+
+
+/* animation */
+
+@keyframes animate{
+    0%,100%{
+        background-image: url(img/lap.png);
+        background-size: contain;
+        object-fit: cover;
+    }
+    25%{
+        background-image: url(img/lap2.png);
+        background-size: contain;
+        object-fit: cover;
+    }
+    50%{
+        background-image: url(img/laptop.jpg);
+        background-size: contain;
+        object-fit: cover;
+    }
+    75%{
+        background-image: url(img/laptop2.jpg);
+        background-size: contain    ;
+        object-fit: cover;
+    }
+}
+
+/* animation ends */
 
 @keyframes zoom{
     from{transform: scale(0)}
@@ -729,15 +968,76 @@ footer .design{
         width: 65%;
         margin: 15px 0;
     }
+
+    .projects .container .pjCard{
+        width: 500px;
+        max-width: 600px;
+        height: 280px;
+        align-items: flex-start;
+    }
+    .projects .container {
+        justify-content: space-evenly;
+    }
+
+
+    .container .pjCard:hover .pjContent h2 {
+        font-size: 20px;
+    }
+    .container .pjCard:hover .pjContent p {
+        font-size: 14px;
+    }
+
+    .pjCard img{
+        height: 370px;
+    }
+    .projects .container .pjCard:hover img{
+        height: 400px;
+        left: 70%;
+    }
+    .projects .container:nth-child(5) .pjCard:nth-child(1) img{
+        height: 200px;
+    }
+    .projects .container:nth-child(5) .pjCard:nth-child(2) img{
+        height: 200px;
+    }
+    .projects .container:nth-child(5) .pjCard:nth-child(1):hover img{
+        height: 120px;
+        left: 60%;
+    }
+    .projects .container:nth-child(5) .pjCard:nth-child(2):hover img{
+        height: 180px;
+        left: 60%;
+    }
 }
 
 @media (max-width: 820px){
     .home{
         background: url(img/dark_lap_small.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .home .home_side:nth-child(2){
+        display: none;
+    }
+    
+    .home_txt,
+    .intro_txt{
+        width: 90%;
+        margin: 50px auto 0 auto;
+        transform: translate(0, 50%);
+        /* background: #64e8ff; */
+    }
+    .home_txt h1,
+    .home_txt .title{
+        font-size: 30px;
+    }
+    .intro_txt p{
+        font-size: 18px;
     }
     .mainMenu{
         padding: 0;
         width: 90%;
+        margin: auto;
     }
     .navBar .menu_btn{
         display: block;
@@ -748,11 +1048,11 @@ footer .design{
     }
     .navBar .menu{
         position: fixed;
-        width: 100%;
+        width: 60%;
         height: 100vh;
         top: 0;
         left: -100%;
-        background-color: rgb(98, 253, 253);
+        background-color: crimson;
         text-align: center;
         padding-top: 70px;
         transition: all 0.4s ease;
@@ -796,6 +1096,7 @@ footer .design{
     .about .about_content .sideBarRight,
     .about .about_content .sideBarLeft{
         width: 100%;
+        margin: auto;
     }
     .about .about_content .sideBarRight .text{
         font-size: 26px;
@@ -804,47 +1105,56 @@ footer .design{
         font-size: 18px;
     }
 
+    
+    .projects .container {
+        flex-direction: column;
+    }
+    .projects .container .pjCard{
+        margin-top: 120px;
+        width: 600px;
+        max-width: 800px;
+        margin-top: 80px;
+    }
+    
+    .projects .container .pjCard:hover img{
+        left: 80%;
+    }
+
+    .projects .container .pjCard:hover img{
+        right: 12%;
+        height: 230px;
+    }
+    
+    .projects .container .pjCard:hover{
+        width: 265px;
+    }
+
 }
 
 
 @media (max-width: 768px){
-    .home_txt,
-    .intro_txt{
-        width: 90%;
-        margin: 50px auto 0 auto;
-        transform: translate(0, 50%);
-        /* background: #64e8ff; */
-    }
-    .home_txt h1,
-    .home_txt .title{
-        font-size: 30px;
-    }
-    .intro_txt p{
-        font-size: 18px;
-    }
-    .cardHolder{
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        /* background: #64e8ff; */
-    }
-    
-    .cardHolder .card{
-        width: 85%;
-        margin: 0 auto;
-        transform: translate(0, 0);
+    #status{
+        background-size: 50%;
     }
 
     
-    .card:hover p, .card:hover h3{
-        opacity: 1;
+    .skills{
+        flex-direction: column;
+        flex-flow: wrap;
     }
-    .card:nth-child(1):before,
-    .card:nth-child(2):before,
-    .card:nth-child(3):before,
-    .card:nth-child(4):before{
-        background-image: none;
+    .percent .number h2{
+        font-size: 26px;
     }
+    
+    .card{
+        width: 40%;
+        margin: 10px 10px;
+    }
+    .card .text{
+        font-size: 14px;
+        font-weight: lighter;
+    }
+
      
     .about .about_content .sideBarLeft img{
         height: 300px;
@@ -859,14 +1169,16 @@ footer .design{
         width: 90%;
     }
     .services .serv_content .card_item .text{
-        font-size: 28px;
+        font-size: 18px;
     }
     .services .serv_content .card_item p{
-        font-size: 24px;
+        font-size: 16px;
+        line-height: 2em;
         padding: 0 15px;
 
 
     }
+    
     .contact .bigBox{
         margin: auto;
         flex-direction: column-reverse;
@@ -880,145 +1192,16 @@ footer .design{
         font-size: 20px;
         letter-spacing: 1.5px;
     }
-
-
+    
+    
+    .projects .container .pjCard{
+        margin-top: 120px;
+        width: 80%;
+        margin-top: 80px;
+    }
+    .projects .container .pjCard:hover{
+        width: 80%;
+    }
 
     
 }
-
-
-/*# CIRCLES*/
-
-.skills_circle{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background-color:#222;
-    margin: 60px 0 0 0;
-    padding: 20px 0;
-  }
-  
-  /* skills cards */
-  .card_circle{
-    position: relative;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-    background: rgba(0, 0, 0, 0.246);
-    margin: 0 10px;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    border-radius: 6px;
-    transition: all 0.4s ease;
-  }
-  .card_circle::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.328);
-    pointer-events: none;
-  }
-  .card_circle:hover{
-    transform: translateY(-10px);
-  }
-  .percent_circle{
-    position: relative;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    box-shadow: inset 0 0 50% #000;
-    background: #222;
-    z-index: 996;
-  }
-  .percent_circle .number_circle{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-  .percent_circle .number_circle h2{
-    font-size: 36px;
-    font-weight: 500;
-    transition: all 0.4s ease;
-  }
-  
-  .percent_circle .number_circle h2 span{
-    font-size: 20px;
-  }
-  .card_circle:hover .percent_circle .number_circle h2{
-    color: #fff;
-    font-size: 46px;
-  }
-  .c_box_circle .text_circle{
-    font-family: 'Poppins', sans-serif;
-    padding: 10px 0;
-    font-size: 26px;
-    color: #fff;
-    font-weight: 100;
-  }
-  
-  svg{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    z-index: 997;
-  }
-  svg circle{
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke: #383838;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform: translate(5px, 5px);
-  
-  }
-  svg circle:nth-child(2){
-    stroke-dasharray: 378;
-    stroke-dashoffset: 378;
-  }
-  
-  .card_circle:nth-child(1) svg circle:nth-child(2){
-    stroke-dashoffset: calc(378 - (378 * 89) / 100);
-    stroke: rgb(255, 6, 234);
-  }
-  
-  .card_circle:nth-child(2) svg circle:nth-child(2){
-    stroke-dashoffset: calc(378 - (378 * 74) / 100);
-    stroke: rgb(6, 255, 234);
-  }
-  .card_circle:nth-child(3) svg circle:nth-child(2){
-    stroke-dashoffset: calc(378 - (378 * 34) / 100);
-    stroke: rgb(0, 255, 42);
-  }
-  .card_circle:nth-child(4) svg circle:nth-child(2){
-    stroke-dashoffset: calc(378 - (378 * 60) / 100);
-    stroke: rgb(255, 43, 6);
-  }
-  
-  /* h2 colors */
-  .card_circle:nth-child(1) .percent_circle  .number_circle  h2:nth-child(1){
-    color: rgb(255, 6, 234);
-  }
-  .card_circle:nth-child(2) .percent_circle  .number_circle  h2:nth-child(1){
-    color: rgb(6, 255, 234);
-  }
-  .card_circle:nth-child(3) .percent_circle  .number_circle  h2:nth-child(1){
-    color: rgb(0, 255, 42);
-  }
-  .card_circle:nth-child(4) .percent_circle  .number_circle  h2:nth-child(1){
-    color: rgb(255, 43, 6);
-  }
-  
